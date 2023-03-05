@@ -1,3 +1,5 @@
+const util = require("util");
+const exec = util.promisify(require("child_process").exec);
 // models
 const Auths = require("models/auths/index");
 const Admins = require("models/users/index");
@@ -14,7 +16,12 @@ const { errors } = require("utils/errors/index");
 const deployTest = async (req, res) => {
   try {
     const body = req.body;
-    console.log("body: ", body);
+    const projectName = body?.project?.name;
+    console.log("projectName: ", projectName);
+
+    const { stdout, stderr } = await exec(`deploy -n ${projectName}`);
+    console.log(`stdout: ${stdout}`);
+    console.error(`stderr: ${stderr}`);
 
     return cwr.createWebResp(res, 200, body);
   } catch (error) {
