@@ -26,7 +26,7 @@ const indexRouter = require("routes/index");
 const usersRouter = require("routes/users");
 const gitlabRouter = require("routes/gitlab");
 
-const version = "/v1";
+const version = "v1";
 
 const app = express();
 const db = require("utils/db");
