@@ -1,14 +1,14 @@
 // models
-const Auths = require('../models/auths/index');
+const Auths = require("models/auths/index");
 // services
-const service = require('../services/index');
+const service = require("services/index");
 // utils
-const cwr = require('../utils/createWebResp');
-const query = require('../utils/query');
-const fn = require('../utils/function');
-const jwt = require('jsonwebtoken');
+const cwr = require("utils/createWebResp");
+const query = require("utils/query");
+const fn = require("utils/function");
+const jwt = require("jsonwebtoken");
 // errors
-const {errors} = require('../utils/errors/index');
+const { errors } = require("utils/errors/index");
 
 // 계정 잠김 상태
 const checkIsLock = async (id) => {
@@ -24,7 +24,7 @@ const checkIsLock = async (id) => {
     // 잠김 해제, 실패 횟수 1
     const isLock = false;
     const failCount = 1;
-    const params = {isLock, failCount};
+    const params = { isLock, failCount };
 
     Object.assign(docs, params);
     await service.updateById(Auths, id, docs);
@@ -46,14 +46,14 @@ const failRecord = async (id, lockTime) => {
     const authReleaseAt = fn.addSecondsDate(lockTime);
     const failCount = 0;
     const isLock = true;
-    const params = {authReleaseAt, failCount, isLock};
+    const params = { authReleaseAt, failCount, isLock };
 
     Object.assign(docs, params);
     await service.updateById(Auths, id, docs);
     return errors.E50022(lockTime);
   } else {
     // 인증 시도 실패 카운트 추가
-    const params = {failCount: addFailCount};
+    const params = { failCount: addFailCount };
     Object.assign(docs, params);
     await service.updateById(Auths, id, docs);
     return errors.E50021(addFailCount);

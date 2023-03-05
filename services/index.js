@@ -1,6 +1,6 @@
 // utils
-const query = require('../utils/query');
-const {sortByLatest, updateOptions} = query;
+const query = require("utils/query");
+const { sortByLatest, updateOptions } = query;
 
 // 생성
 const create = async (model, data) => {
@@ -28,7 +28,7 @@ const readOne = async (model, conditions) => {
 
 // 조회(이메일)
 const readByEmail = async (model, email) => {
-  const conditions = {'authValues.email': email};
+  const conditions = { "authValues.email": email };
   const docs = await model.findOne(conditions).sort(sortByLatest).lean();
   return docs;
 };
@@ -44,7 +44,7 @@ const updateById = async (model, id, data) => {
 
 // 탐색(email), 수정(data)
 const updateByEmail = async (model, email, data) => {
-  const conditions = {'authValues.email': email};
+  const conditions = { "authValues.email": email };
   const docs = await model
     .findByIdAndUpdate(conditions, data, updateOptions)
     .lean();

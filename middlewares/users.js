@@ -1,15 +1,15 @@
 // models
-const Auths = require("../models/auths/index");
-const Admins = require("../models/users/index");
+const Auths = require("models/auths/index");
+const Admins = require("models/users/index");
 // services
-const service = require("../services/index");
+const service = require("services/index");
 // utils
-const cwr = require("../utils/createWebResp");
-const crypto = require("../utils/crypto");
-const payload = require("../utils/payload");
-const auths = require("../utils/auths");
+const cwr = require("utils/createWebResp");
+const crypto = require("utils/crypto");
+const payload = require("utils/payload");
+const auths = require("utils/auths");
 // errors
-const { errors } = require("../utils/errors/index");
+const { errors } = require("utils/errors/index");
 
 // [관리자] 계정 유형 검증
 const isAdmin = async (req, res, next) => {

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const cwr = require("./createWebResp");
 const { errors } = require("./errors/index");
-const config = require("../config/dbConfig");
+const config = require("config/dbConfig");
 
 const connect = async (DB_URI) => {
   console.log("DB_URI: ", DB_URI);

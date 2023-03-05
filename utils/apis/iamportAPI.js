@@ -1,8 +1,8 @@
-const axios = require('axios');
-const iamportConfig = require('../../config/iamportConfig');
-const headerConfig = require('../../config/headerConfig');
+const axios = require("axios");
+const iamportConfig = require("config/iamportConfig");
+const headerConfig = require("config/headerConfig");
 // utils
-const payload = require('../../utils/payload');
+const payload = require("utils/payload");
 
 // 권한이 있는 사용자만 호출 or 서버 사이드에서 호출
 const getAccessaccessToken = async () => {
@@ -15,10 +15,10 @@ const getAccessaccessToken = async () => {
 
     const response = await axios.post(url, data);
 
-    const {access_token} = response.data.response;
+    const { access_token } = response.data.response;
     return access_token;
   } catch (error) {
-    console.log('imp/getAccessToken Error => ', error);
+    console.log("imp/getAccessToken Error => ", error);
   }
 };
 
@@ -34,7 +34,7 @@ const getCertification = async (impUid) => {
 
     return payload.certification(response.data.response);
   } catch (error) {
-    console.log('imp/getAccessToken Error => ', error);
+    console.log("imp/getAccessToken Error => ", error);
   }
 };
 

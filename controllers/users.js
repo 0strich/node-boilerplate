@@ -1,14 +1,14 @@
 // models
-const Auths = require("../models/auths/index");
-const Admins = require("../models/users/index");
+const Auths = require("models/auths/index");
+const Admins = require("models/users/index");
 // services
-const service = require("../services/index");
+const service = require("services/index");
 // utils
-const jwt = require("../utils/jwt");
-const cwr = require("../utils/createWebResp");
-const payload = require("../utils/payload");
+const jwt = require("utils/jwt");
+const cwr = require("utils/createWebResp");
+const payload = require("utils/payload");
 // errors
-const { errors } = require("../utils/errors/index");
+const { errors } = require("utils/errors/index");
 
 // 회원가입
 const postRegister = async (req, res) => {
