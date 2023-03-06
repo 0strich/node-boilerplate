@@ -27,7 +27,9 @@ const deployTest = async (req, res) => {
     const project = projects.find((el) => el?.projectName === projectName);
 
     if (project) {
-      const { stdout, stderr } = await exec(`deploy -n ${projectName}`);
+      const { stdout, stderr } = await exec(
+        `deploy -n ${projectName} ${project.project}`
+      );
       console.log(`stdout: ${stdout}`);
       console.error(`stderr: ${stderr}`);
     } else {
