@@ -23,8 +23,10 @@ const deployTest = async (req, res) => {
   try {
     const body = req.body;
     const projectName = body?.project?.name;
+    console.log("projectName: ", projectName);
 
     const project = projects.find((el) => el?.projectName === projectName);
+    console.log("project: ", project);
 
     if (project) {
       const { stdout, stderr } = await exec(
