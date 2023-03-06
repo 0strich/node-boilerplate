@@ -30,7 +30,7 @@ const deployTest = async (req, res) => {
 
     if (project) {
       const { stdout, stderr } = await exec(
-        `deploy -n ${projectName} ${project.project}`
+        `deploy -n ${project.project} ${projectName}`
       );
       console.log(`stdout: ${stdout}`);
       console.error(`stderr: ${stderr}`);
