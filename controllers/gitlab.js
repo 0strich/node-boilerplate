@@ -17,7 +17,6 @@ const deployTest = async (req, res) => {
   try {
     const body = req.body;
     const projectName = body?.project?.name;
-    console.log("projectName: ", projectName);
 
     const { stdout, stderr } = await exec(`deploy -n ${projectName}`);
     console.log(`stdout: ${stdout}`);
