@@ -13,6 +13,8 @@ const gitlabWebhookProjects = [
   { host: "vendor", project: "ilharu", projectName: "ilharu-unity-node" },
   { host: "vendor", project: "dable", projectName: "smti-dable-node" },
   { host: "vendor", project: "dable", projectName: "smti-dable-react" },
+  { host: "vendor", project: "test", projectName: "test-node" },
+  { host: "vendor", project: "test", projectName: "test-react" },
 ];
 
 module.exports = {
