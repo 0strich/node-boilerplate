@@ -8,29 +8,28 @@ const service = require("services/index");
 // utils
 const jwt = require("utils/jwt");
 const cwr = require("utils/createWebResp");
+const { gitlabWebhookProjects } = require("utils/constants");
 const payload = require("utils/payload");
 // errors
 const { errors } = require("utils/errors/index");
-
-const projects = [
-  { host: "vendor", project: "test", projectName: "test-node" },
-  { host: "vendor", project: "test", projectName: "test-react" },
-  { host: "vendor", project: "", projectName: "" },
-];
 
 // webhook deploy
 const webhookDeploy = async (req, res) => {
   try {
     const body = req.body;
-    const projectName = body?.project?.name;
+    const eventProjectName = body?.project?.name;
     console.log("projectName: ", projectName);
 
-    const project = projects.find((el) => el?.projectName === projectName);
+    const findProject = gitlabWebhookProjects.find(
+      (el) => el?.projectName === eventProjectName
+    );
+
+    const { host, project, projectName } = project;
     console.log("project: ", project);
 
-    if (project) {
+    if (findProject) {
       const { stdout, stderr } = await exec(
-        `deploy -n ${project.host} ${project.project} ${projectName}`
+        `deploy -n ${host} ${project} ${projectName}`
       );
       console.log(`stdout: ${stdout}`);
       console.error(`stderr: ${stderr}`);
