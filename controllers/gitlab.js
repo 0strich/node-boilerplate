@@ -13,9 +13,9 @@ const payload = require("utils/payload");
 const { errors } = require("utils/errors/index");
 
 const projects = [
-  { project: "test", projectName: "test-node" },
-  { project: "test", projectName: "test-react" },
-  { project: "", projectName: "" },
+  { host: "vendor", project: "test", projectName: "test-node" },
+  { host: "vendor", project: "test", projectName: "test-react" },
+  { host: "vendor", project: "", projectName: "" },
 ];
 
 // push test
