@@ -18,7 +18,7 @@ const webhookDeploy = async (req, res) => {
   try {
     const body = req.body;
     const eventProjectName = body?.project?.name;
-    console.log("projectName: ", projectName);
+    console.log("eventProjectName: ", eventProjectName);
 
     const findProject = gitlabWebhookProjects.find(
       (el) => el?.projectName === eventProjectName
