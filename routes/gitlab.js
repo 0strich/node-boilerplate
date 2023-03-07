@@ -10,7 +10,7 @@ const controller = require("controllers/gitlab");
 // utils
 const jwt = require("utils/jwt");
 
-// 회원 가입
-router.post("/deploy-test", controller.deployTest);
+// webhook
+router.post("/webhook/deploy", controller.webhookDeploy);
 
 module.exports = router;

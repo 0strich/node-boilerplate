@@ -18,8 +18,8 @@ const projects = [
   { host: "vendor", project: "", projectName: "" },
 ];
 
-// push test
-const deployTest = async (req, res) => {
+// webhook deploy
+const webhookDeploy = async (req, res) => {
   try {
     const body = req.body;
     const projectName = body?.project?.name;
@@ -45,5 +45,5 @@ const deployTest = async (req, res) => {
 };
 
 module.exports = {
-  deployTest,
+  webhookDeploy,
 };
