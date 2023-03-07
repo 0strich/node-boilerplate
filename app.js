@@ -32,7 +32,7 @@ const app = express();
 const db = require("utils/db");
 
 // database connect
-db.connectDB();
+// db.connectDB();
 
 // view engine setup
 app.disable("etag");
