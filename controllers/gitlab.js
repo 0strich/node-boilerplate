@@ -24,7 +24,7 @@ const webhookDeploy = async (req, res) => {
       (el) => el?.projectName === eventProjectName
     );
 
-    const { host, project, projectName } = project;
+    const { host, project, projectName } = findProject;
     console.log("project: ", project);
 
     if (findProject) {
