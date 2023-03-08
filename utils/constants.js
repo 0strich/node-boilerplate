@@ -3,7 +3,7 @@ const emptyTypeString = ["undefined", "null", "NaN", "false", "{}", "[]", ""];
 const emptyElements = [...emptyTypes, ...emptyTypeString];
 
 const gitlabWebhookProjects = [
-  { host: "sm", project: "homepage", projectName: "homepage-react" },
+  { host: "sm", project: "homepage", projectName: "homepage" },
   { host: "vendor", project: "vision", projectName: "vision-node" },
   { host: "vendor", project: "vision", projectName: "vision-react" },
   { host: "vendor", project: "obigshare", projectName: "obigshare-api" },
