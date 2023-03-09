@@ -4,6 +4,10 @@ const emptyElements = [...emptyTypes, ...emptyTypeString];
 
 const gitlabWebhookProjects = [
   { host: "sm", project: "homepage", projectName: "homepage" },
+  { host: "sm", project: "salti", projectName: "salti-admin" },
+  { host: "sm", project: "salti", projectName: "salti-node" },
+  { host: "sm", project: "salti", projectName: "salti-partners" },
+  { host: "sm", project: "salti", projectName: "salti-smti" },
   { host: "vendor", project: "vision", projectName: "vision-node" },
   { host: "vendor", project: "vision", projectName: "vision-react" },
   { host: "vendor", project: "obigshare", projectName: "obigshare-api" },
